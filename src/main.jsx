@@ -4,12 +4,14 @@ import App from "./App.jsx";
 import "./index.css";
 
 async function enableMocking() {
-  if (import.meta.env.DEV) {
+  if (!import.meta.env.DEV) {
     return;
   }
 
   const { worker } = await import("./stubs/browser.js");
-  return worker.start();
+  return worker.start({
+    serviceWorker: { url: "/diplom_calendar/mockServiceWorker.js" },
+  });
 }
 
 enableMocking().then(() => {
