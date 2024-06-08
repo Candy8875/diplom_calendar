@@ -10,8 +10,7 @@ const Day = ({ day, isCurrent }) => {
   const formattedDate = day.format("YYYY-MM-DD");
   const { data } = useQuery({
     queryKey: ["events", formattedDate],
-    queryFn: () => getEventsByDate(formattedDate),
-    staleTime: Infinity,
+    queryFn: async () => await getEventsByDate(formattedDate),
     gcTime: Infinity,
   });
 

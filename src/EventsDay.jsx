@@ -4,6 +4,7 @@ import NextPreviousDay from "./NextPreviousDay";
 import { useQuery } from "@tanstack/react-query";
 import Event from "./Event";
 import dayjs from "dayjs";
+import { getEventsByDate } from "./api/api";
 
 const WORKING_HOURS_START = 9 * 60; // 9:00
 const WORKING_HOURS_END = 20 * 60; // 20:00
@@ -15,8 +16,7 @@ const EventsDay = () => {
   const formattedDate = currentDate.format("YYYY-MM-DD");
   const { data } = useQuery({
     queryKey: ["events", formattedDate],
-    queryFn: () => getEventsByDate(formattedDate),
-    staleTime: Infinity,
+    queryFn: async () => await getEventsByDate(formattedDate),
     gcTime: Infinity,
   });
 
