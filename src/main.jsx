@@ -9,7 +9,13 @@ async function enableMocking() {
   }
 
   const { worker } = await import("./stubs/browser.js");
-  return worker.start();
+  return worker.start({
+    serviceWorker: {
+      // Provide a custom worker script URL, taking
+      // the "homepage" into account.
+      url: "diplom_calendar/mockServiceWorker.js",
+    },
+  });
 }
 
 enableMocking().then(() => {
