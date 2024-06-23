@@ -61,7 +61,7 @@ export const handlers = [
     });
   }),
 
-  http.post("/addEvent", async ({ request }) => {
+  http.post("*/addEvent", async ({ request }) => {
     const newEvent = await request.json();
     allEvents.push(newEvent);
     return new Response(JSON.stringify(newEvent), {
