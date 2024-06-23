@@ -36,7 +36,8 @@ h1 {
   line-height: 1.1;
 }
 
-button {
+button,
+input[type="submit"] {
   border-radius: 50%;
   border: 1px solid transparent;
   font-size: 1em;
@@ -48,11 +49,14 @@ button {
   min-width: 50px;
   min-height: 50px;
 }
-button:hover {
+button:hover,
+input[type="submit"]:hover {
   border-color: #646cff;
 }
 button:focus,
-button:focus-visible {
+button:focus-visible,
+input[type="submit"]:focus-visible,
+input[type="submit"]:focus {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
@@ -64,7 +68,8 @@ button:focus-visible {
   a:hover {
     color: #747bff;
   }
-  button {
+  button,
+  input[type="submit"] {
     background-color: #5e5a9a;
   }
 }
@@ -141,7 +146,8 @@ select {
   cursor: pointer;
   color: #828282;
 }
-.button-event {
+.button-event,
+input[type="submit"] {
   min-width: 145px;
   min-height: 45px;
   padding: 10px;
@@ -155,6 +161,12 @@ select {
   appearance: none;
   cursor: pointer;
   color: #ffffff;
+}
+.input-failed {
+  border-color: red;
+}
+.font-failed {
+  color: red;
 }
 
 .input-search-day {
