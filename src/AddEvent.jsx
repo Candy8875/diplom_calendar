@@ -199,9 +199,7 @@ export default function AddEvent() {
                   id="description"
                   {...register("description")}
                   type="text"
-                  className={`input-event ${
-                    errors.startDate ? "input-failed" : ""
-                  }`}
+                  className="input-event"
                 />
                 <input
                   type="submit"
