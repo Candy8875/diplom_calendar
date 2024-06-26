@@ -8,7 +8,7 @@ export function getDatesOfMonthWithOutsideDays(year, month) {
   const startDayOfWeek = monthStart.weekday();
   const daysFromPrevMonth = startDayOfWeek;
 
-  const totalDaysNeeded = 7 * 5;
+  const totalDaysNeeded = 7 * 6;
   const coreDaysCount = daysFromPrevMonth + daysInMonth;
   const daysFromNextMonth =
     totalDaysNeeded > coreDaysCount ? totalDaysNeeded - coreDaysCount : 0;

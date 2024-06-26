@@ -96,7 +96,7 @@ export default function AddEvent() {
 
                         return (
                           dayjs(startDate) < dayjs(formValues.endDate) ||
-                          "Время начала события не может быть позже окончания"
+                          "Время окончания события не может быть позже окончания"
                         );
                       },
                     },
