@@ -282,6 +282,7 @@ tr td:last-child {
 
 .day-number.outside {
   color: #bebebe;
+  margin-right: 5px;
 }
 
 .months {
